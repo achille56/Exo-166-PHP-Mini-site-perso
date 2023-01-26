@@ -24,3 +24,10 @@ function getPart($name) {
 	include __DIR__ . '/../parts/'. $name . '.php';
 }
 
+function getUserData() {
+   if (file_exists("../data/user.json")) {
+       $message = file_get_contents("../data/user.json");
+       return json_decode($message, true);
+   }
+}
+
